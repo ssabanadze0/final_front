@@ -65,3 +65,4 @@ Responsive:
 
 
 იმუშავეთ დამოუკიდებლად, და თქვენი ნამუშევარი გითჰაბის კომიტებშიც უნდა ჩანდეს. (მხოლოდ პირველი და ბოლო კომიტი არ უნდა იყოს)
+ლინკი დიზაინის https://xd.adobe.com/view/015e54c6-54c7-40bb-9e78-f0f3fc71a112-540d/specs/?authuser=1&fbclid=IwAR3tfLxG_vGWXGIf5lGi9l0p221Hxe4vQcR9tckiqOTOBdoz2i3ZaT-OEck
