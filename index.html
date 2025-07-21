@@ -3,6 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+
     <title>my project</title>
     <link rel="stylesheet" href="src/style.css" />
   </head>
@@ -24,12 +29,26 @@
         <div class="intro-text">
           <h1>
             <span class="light">Hi, I'm</span> <br /><span class="bold"
-              >Jonathan Deo</span
+              >Saba Sabanadze</span
             >
           </h1>
           <p class="tagline">I am Web Designer @ Company.com</p>
           <div class="social-icons">
-            <i>FB</i> <i>TW</i> <i>G+</i> <i>YT</i> <i>RSS</i>
+            <a href="https://facebook.com" target="_blank"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+            <a href="https://twitter.com" target="_blank"
+              ><i class="fab fa-twitter"></i
+            ></a>
+            <a href="https://plus.google.com" target="_blank"
+              ><i class="fab fa-google-plus-g"></i
+            ></a>
+            <a href="https://youtube.com" target="_blank"
+              ><i class="fab fa-youtube"></i
+            ></a>
+            <a href="https://rss.com" target="_blank"
+              ><i class="fas fa-rss"></i
+            ></a>
           </div>
         </div>
       </div>
@@ -37,13 +56,19 @@
 
     <!-- Slider Section -->
     <section class="slider">
-      <img src="images/slider-image.jpg" alt="Profile Slide" />
+      <img
+        id="slider-image"
+        src="src/images/3-circles.jpg"
+        alt="Profile Slide"
+      />
     </section>
 
     <!-- Client Stats -->
-    <section class="client-stats">
-      <p>100% Satisfied Clients</p>
-    </section>
+    <div class="client-stats">
+      <span class="highlight">100%</span>
+      <span class="client-text">Satisfied Clients</span>
+      <div class="underline"></div>
+    </div>
 
     <!-- Profile Section -->
     <section class="profile">
@@ -141,5 +166,6 @@
         <span>FB</span><span>TW</span><span>G+</span><span>IN</span>
       </div>
     </footer>
+    <script src="src/app.js"></script>
   </body>
 </html>

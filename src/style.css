@@ -30,6 +30,7 @@ header {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: top center;
   transition: opacity 0.5s ease-in-out;
 }
 
@@ -117,20 +118,44 @@ header {
   color: #333;
   margin-top: 10px;
 }
-
+/* social */
 .social-icons {
   margin-top: 16px;
   display: flex;
-  gap: 12px;
+  gap: 16px;
   font-size: 20px;
+}
+
+.social-icons a {
+  color: #000;
+  transition: color 0.3s;
+  text-decoration: none;
+}
+
+.social-icons a:hover {
+  color: #ff2c2c;
 }
 
 /* Client Stats */
 .client-stats {
-  padding: 20px 40px;
+  position: absolute;
+  bottom: 40px;
+  right: 40px;
   font-family: "Montserrat", sans-serif;
   font-size: 14px;
   color: #000;
+}
+
+.client-stats .highlight {
+  font-weight: 700;
+  color: #e93656;
+}
+
+.client-stats .underline {
+  width: 120%;
+  height: 3px;
+  background-color: #e93656;
+  margin-top: 4px;
 }
 
 /* Profile Section */
