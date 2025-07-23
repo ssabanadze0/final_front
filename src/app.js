@@ -15,3 +15,16 @@ function changeImage() {
 }
 
 setInterval(changeImage, 5000);
+///skills
+document.querySelectorAll(".skill").forEach((skill) => {
+  const subject = skill.dataset.subject;
+  const competency = skill.dataset.competency;
+
+  skill.innerHTML = `
+    <div class="skill-label">
+      <span class="skill-name">${subject}</span>
+      <span class="skill-value">${competency}</span>
+    </div>
+    <div class="bar" style="--percent: ${competency}"></div>
+  `;
+});

@@ -1,11 +1,19 @@
+/* ========================================
+   Global Reset & Font Import
+======================================== */
 @import url("./fonts/stylesheet.css");
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  text-decoration: none;
+  color: inherit;
 }
 
+/* ========================================
+   Header & Hero Section
+======================================== */
 header {
   font-family: "Poppins", sans-serif;
   position: relative;
@@ -15,7 +23,6 @@ header {
   color: #000;
 }
 
-/* Background slider inside header */
 .slider {
   background-color: #dd2e2e;
   position: absolute;
@@ -34,14 +41,12 @@ header {
   transition: opacity 0.5s ease-in-out;
 }
 
-/* Flex container for top row: logo + about-label */
 .header-content {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
 }
 
-/* logo */
 .logo {
   font-family: "Poppins", sans-serif;
   font-weight: 800;
@@ -62,7 +67,6 @@ header {
   margin-top: -18px;
 }
 
-/* "01 About Me" block */
 .about-label {
   text-align: right;
 }
@@ -85,7 +89,7 @@ header {
   margin-top: -107.57px;
   display: block;
 }
-/* Intro text */
+
 .intro-wrapper {
   display: flex;
   justify-content: flex-end;
@@ -118,7 +122,7 @@ header {
   color: #333;
   margin-top: 10px;
 }
-/* social */
+
 .social-icons {
   margin-top: 16px;
   display: flex;
@@ -136,11 +140,11 @@ header {
   color: #ff2c2c;
 }
 
-/* Client Stats */
 .client-stats {
   position: absolute;
   bottom: 40px;
   right: 40px;
+  margin-right: 37.21px;
   font-family: "Montserrat", sans-serif;
   font-size: 14px;
   color: #000;
@@ -158,89 +162,247 @@ header {
   margin-top: 4px;
 }
 
-/* Profile Section */
-.profile {
+/* ========================================
+   Profile Section
+======================================== */
+.profile-section {
+  background-color: #f9f9f9;
+  padding: 100px 40px;
+}
+
+.profile-3col-container {
   display: flex;
+  justify-content: center;
   align-items: center;
-  justify-content: space-between;
-  padding: 60px 40px;
+  gap: 70px;
+  flex-wrap: wrap;
+  text-align: center;
 }
 
-.profile-text h2 {
+.profile-about {
+  max-width: 350px;
+  text-align: right;
+}
+
+.profile-about h2 {
   font-family: "Poppins", sans-serif;
-  font-size: 32px;
-  font-weight: 800;
+  font-size: 28px;
+  font-weight: 700;
   margin-bottom: 10px;
-}
-
-.profile-text p {
-  font-family: "Montserrat", sans-serif;
   color: #333;
-  font-size: 16px;
-  max-width: 400px;
 }
 
-.profile-image img {
-  width: 180px;
+.profile-about p,
+.profile-about .about-text {
+  font-family: "Montserrat", sans-serif;
+  font-size: 15px;
+  color: #555;
+  line-height: 26px;
+  word-wrap: break-word;
+  hyphens: auto;
+  margin-bottom: 20px;
+}
+
+.hire-btn-red {
+  padding: 12px 20px;
+  background-color: #e93656;
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  border: none;
   border-radius: 4px;
+  cursor: pointer;
 }
 
-/* Skills Section */
-.skills {
-  padding: 40px;
-  background: #f4f4f4;
+/* Profile Image */
+.profile-about,
+.profile-skills-social,
+.profile-image-center {
+  width: 350px;
+}
+
+.profile-image-center img {
+  width: 350px;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Profile Skills and Socials */
+.profile-skills-social {
+  max-width: 350px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .skill {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.skill-label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  color: #333;
+}
+
+.skill-label .name {
+  text-align: left;
+}
+
+.skill-label .value {
+  color: #e93656;
+  font-weight: 600;
+  font-size: 13px;
+}
+
+/* Progress bar container and fill */
+.profile-skills-social {
+  width: 350px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.skill {
+  width: 100%;
+}
+
+.skill-name {
   font-family: "Poppins", sans-serif;
   font-size: 16px;
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 6px;
+  text-align: left;
+}
+
+.bar {
+  width: 300px;
+  height: 8px;
+  background-color: #e5e5e5;
+  border-radius: 5px;
+  position: relative;
+  overflow: hidden;
+}
+
+.bar::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: var(--percent, 0%);
+  background-color: #e93656;
+  border-radius: 5px;
+  transition: width 1s ease-in-out;
+}
+
+/* ===============================
+   Contact Info Section (3 Boxes)
+================================= */
+.contact-info-section {
+  background-color: #131a36;
+  padding: 60px 40px;
+  color: #fff;
+}
+
+.contact-info-container {
+  display: flex;
+  justify-content: center;
+  gap: 70px;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+.contact-box {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.contact-inner {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  text-align: left;
+  gap: 15px;
+}
+
+/* Circle Icon Styles */
+.circle {
+  width: 90px;
+  height: 90px;
+  min-width: 90px;
+  min-height: 90px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   margin-bottom: 10px;
 }
 
-/* Features Grid */
-.features {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  padding: 60px 40px;
-  gap: 20px;
-  background: #fff;
-  text-align: center;
+.circle img {
+  max-width: 30px;
+  height: auto;
 }
 
-.feature {
+.dashed-circle {
+  border: 2px dashed #fff;
+}
+
+.solid-circle {
+  background-color: #e93656;
+}
+
+/* Contact Text Styles */
+.contact-text h2,
+.contact-box h2 {
   font-family: "Poppins", sans-serif;
-  font-size: 16px;
-  color: #000;
-  padding: 20px;
-  border: 1px solid #eee;
-  border-radius: 8px;
-}
-
-.feature.highlight {
-  background-color: #0081ff;
+  font-size: 18px;
+  font-weight: 600;
   color: #fff;
+  margin: 0;
+  margin-bottom: 6px;
+}
+.contact-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
-/* Testimonial */
-.testimonial {
-  background: #1e1e2f;
-  color: #fff;
-  text-align: center;
-  padding: 60px 20px;
-}
-
-.testimonial blockquote {
-  font-size: 20px;
-  font-style: italic;
+.contact-text a,
+.contact-text p,
+.contact-box a,
+.contact-box p {
   font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  color: #ccc;
+  text-decoration: none;
+  line-height: 1.3;
+}
+.contact-text a + a {
+  margin-top: 4px;
+  display: inline-block;
 }
 
-.testimonial .author {
-  margin-top: 20px;
-  font-weight: bold;
+.contact-text a:hover,
+.contact-box a:hover {
+  color: #e93656;
 }
 
-/* Projects */
+/* ========================================
+   Projects Section
+======================================== */
 .projects {
   padding: 60px 40px;
   background: #fff;
@@ -265,7 +427,9 @@ header {
   font-family: "Montserrat", sans-serif;
 }
 
-/* Articles */
+/* ========================================
+   Articles Section
+======================================== */
 .articles {
   padding: 60px 40px;
 }
@@ -292,7 +456,9 @@ header {
   color: #333;
 }
 
-/* Team Logos */
+/* ========================================
+   Team Section
+======================================== */
 .team {
   padding: 60px 40px;
   text-align: center;
@@ -312,26 +478,28 @@ header {
   font-size: 16px;
 }
 
-/* Contact Section */
-.contact {
+/* ========================================
+   Contact-us Section
+======================================== */
+.contact-us {
   padding: 60px 40px;
   background: #f4f4f4;
   text-align: center;
 }
 
-.contact h2 {
+.contact-us h2 {
   font-family: "Poppins", sans-serif;
   font-size: 28px;
   margin-bottom: 20px;
 }
 
-.contact form {
+.contact-us form {
   max-width: 600px;
   margin: 0 auto;
 }
 
-.contact input,
-.contact textarea {
+.contact-us input,
+.contact-us textarea {
   width: 100%;
   padding: 12px;
   margin-bottom: 12px;
@@ -340,7 +508,7 @@ header {
   font-size: 14px;
 }
 
-.contact button {
+.contact-us button {
   padding: 12px 20px;
   background: #0081ff;
   color: #fff;
@@ -350,7 +518,9 @@ header {
   cursor: pointer;
 }
 
-/* Footer */
+/* ========================================
+   Footer Section
+======================================== */
 footer {
   background: #1e1e1e;
   color: #ccc;
