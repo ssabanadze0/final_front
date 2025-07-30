@@ -69,73 +69,74 @@
       <span class="client-text">Satisfied Clients</span>
       <div class="underline"></div>
     </div>
-    <!-- 2 section -->
-    <section class="profile-section">
-      <div class="profile-3col-container">
-        <!-- Left: About Me -->
-        <div class="profile-about">
-          <h2>Saba Sabanadze</h2>
-          <p class="about-text">
-            Web Designer & Developer passionate about clean interfaces, secure
-            code, and great user experiences.
-          </p>
-          <a
-            href="mailto:ssabanadze01@gmail.com?subject=Hiring%20Inquiry&body=Hi%20Saba,%0AI%20am%20interested%20in%20working%20with%20you."
-            class="hire-btn-red"
-          >
-            Hire Me
-          </a>
-        </div>
+    <div class="profile-3col-container">
+      <!-- 2 section -->
+      <section class="profile-section">
+        <div class="profile-3col-container">
+          <!-- Left: About Me -->
+          <div class="profile-about">
+            <h2>Saba Sabanadze</h2>
+            <p class="about-text">
+              Web Designer & Developer passionate about clean interfaces, secure
+              code, and great user experiences.
+            </p>
+            <a
+              href="mailto:ssabanadze01@gmail.com?subject=Hiring%20Inquiry&body=Hi%20Saba,%0AI%20am%20interested%20in%20working%20with%20you."
+              class="hire-btn-red"
+            >
+              Hire Me
+            </a>
+          </div>
 
-        <!-- Center: Image -->
-        <div class="profile-image-center">
-          <img src="src/images/bold.png" alt="Saba Sabanadze" />
-        </div>
+          <!-- Center: Image -->
+          <div class="profile-image-center">
+            <img src="src/images/bold.png" alt="Saba Sabanadze" />
+          </div>
 
-        <!-- Right: Skills & Social -->
-        <div class="profile-skills-social">
+          <!-- Right: Skills & Social -->
           <div class="profile-skills-social">
-            <div class="skills">
-              <div
-                class="skill"
-                data-subject="Front End"
-                data-competency="90%"
-              ></div>
-              <div
-                class="skill"
-                data-subject="Back End"
-                data-competency="75%"
-              ></div>
-              <div
-                class="skill"
-                data-subject="React"
-                data-competency="85%"
-              ></div>
+            <div class="profile-skills-social">
+              <div class="skills">
+                <div
+                  class="skill"
+                  data-subject="Front End"
+                  data-competency="90%"
+                ></div>
+                <div
+                  class="skill"
+                  data-subject="Back End"
+                  data-competency="75%"
+                ></div>
+                <div
+                  class="skill"
+                  data-subject="React"
+                  data-competency="85%"
+                ></div>
+              </div>
+            </div>
+
+            <!-- Social Icons -->
+            <div class="social-icons profile-socials">
+              <a href="https://facebook.com" target="_blank"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a href="https://twitter.com" target="_blank"
+                ><i class="fab fa-twitter"></i
+              ></a>
+              <a href="https://plus.google.com" target="_blank"
+                ><i class="fab fa-google-plus-g"></i
+              ></a>
+              <a href="https://youtube.com" target="_blank"
+                ><i class="fab fa-youtube"></i
+              ></a>
+              <a href="https://rss.com" target="_blank"
+                ><i class="fas fa-rss"></i
+              ></a>
             </div>
           </div>
-
-          <!-- Social Icons -->
-          <div class="social-icons profile-socials">
-            <a href="https://facebook.com" target="_blank"
-              ><i class="fab fa-facebook-f"></i
-            ></a>
-            <a href="https://twitter.com" target="_blank"
-              ><i class="fab fa-twitter"></i
-            ></a>
-            <a href="https://plus.google.com" target="_blank"
-              ><i class="fab fa-google-plus-g"></i
-            ></a>
-            <a href="https://youtube.com" target="_blank"
-              ><i class="fab fa-youtube"></i
-            ></a>
-            <a href="https://rss.com" target="_blank"
-              ><i class="fas fa-rss"></i
-            ></a>
-          </div>
         </div>
-      </div>
-    </section>
-
+      </section>
+    </div>
     <!-- contacts -->
     <section class="contact-info-section">
       <div class="contact-info-container">
@@ -581,6 +582,7 @@
                 name="name"
                 required
               />
+              <div class="hint" id="nameHint"></div>
             </div>
             <div class="form-group">
               <input
@@ -590,6 +592,7 @@
                 name="email"
                 required
               />
+              <div class="hint" id="mailHint"></div>
             </div>
             <div class="form-group">
               <input
@@ -599,6 +602,7 @@
                 name="website"
                 required
               />
+              <div class="hint" id="siteHint"></div>
             </div>
           </div>
 
@@ -609,6 +613,7 @@
               name="message"
               required
             ></textarea>
+            <div class="hint" id="textHint"></div>
           </div>
 
           <button type="submit" id="submit-button" class="submit-button">
@@ -661,6 +666,17 @@
         </p>
       </div>
     </footer>
+    <div id="error-modal" class="modal">
+      <div class="modal-content">
+        <p>Please fill all forms before submitting.</p>
+      </div>
+    </div>
+
+    <div id="success-modal" class="modal">
+      <div class="modal-content">
+        <p>Thank you for getting in touch! We appreciate you contacting us.</p>
+      </div>
+    </div>
 
     <script src="src/app.js"></script>
   </body>

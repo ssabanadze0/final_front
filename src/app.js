@@ -1,4 +1,4 @@
-// ========== 1. Header Slider (✅ Good)
+//Heade
 const images = [
   "src/images/3-circles.jpg",
   "src/images/robo.jpg",
@@ -14,7 +14,7 @@ function changeImage() {
 }
 setInterval(changeImage, 5000);
 
-// ========== 2. Skill Bars with Scroll Animation (✅ Good)
+// Skill Bars
 const skills = document.querySelectorAll(".skill");
 let skillAnimationPlayed = false;
 
@@ -55,10 +55,10 @@ function animateSkills() {
 window.addEventListener("scroll", animateSkills);
 window.addEventListener("load", animateSkills);
 
-// ========== 3. Testimonials (✅ Good)
+//Testimonia
 const testimonials = [
   {
-    text: "lorem",
+    text: "Consectetur adipisicing elit. Nostrum voluptas molestias",
     photo: "src/images/d4.svg",
     role: "Graphic Designer",
     name: "Mau Thomas",
@@ -70,7 +70,7 @@ const testimonials = [
     name: "Emily Johnson",
   },
   {
-    text: "Tempor incididunt ut labore et dolore magna aliqua.",
+    text: "Consectetur adipisicing elit. Nostrum voluptas molestias",
     photo: "src/images/d5.svg",
     role: "UI Designer",
     name: "John Smith",
@@ -117,18 +117,17 @@ function resetTestimonialInterval() {
 let testimonialInterval = setInterval(renderNextTestimonial, 10000);
 updateTestimonial(testimonialIndex);
 
-// ========== 4. Latest Projects + Red Line ==========
+// ===Latest Projects
 
 const filterItems = document.querySelectorAll(".p_filter li");
 const projectItems = document.querySelectorAll(".project");
 const filterList = document.querySelector(".p_filter ul");
 
-// Create red line once
 const highlightLine = document.createElement("div");
 highlightLine.classList.add("filter-highlight");
 filterList.appendChild(highlightLine);
 
-// Move red line under initial active
+// Move red line
 const initActive = document.querySelector(".p_filter li.active");
 if (initActive) moveHighlight(initActive);
 
@@ -167,8 +166,129 @@ function moveHighlight(item) {
   highlightLine.style.top = offsetTop + "px";
 }
 
-// 📱 Ensure red line repositions on resize
 window.addEventListener("resize", () => {
   const current = document.querySelector(".p_filter li.active");
   if (current) moveHighlight(current);
+});
+//// bolo funthion
+//    element
+const nameInput = document.getElementById("name");
+const emailInput = document.getElementById("email");
+const websiteInput = document.getElementById("website");
+const messageInput = document.getElementById("message");
+
+const nameHint = document.getElementById("nameHint");
+const mailHint = document.getElementById("mailHint");
+const siteHint = document.getElementById("siteHint");
+const textHint = document.getElementById("textHint");
+
+const successModal = document.getElementById("success-modal");
+const errorModal = document.getElementById("error-modal");
+const form = document.getElementById("contact-form");
+const submitButton = form.querySelector("button");
+
+//  funciebi
+function showModal(id, duration = 4000) {
+  const modal = document.getElementById(id);
+  modal.style.display = "flex";
+  setTimeout(() => {
+    modal.style.display = "none";
+  }, duration);
+}
+
+function attachValidator(inputEl, hintEl, validatorFn, messageFn) {
+  inputEl.addEventListener("input", () => {
+    const value = inputEl.value.trim();
+
+    if (value === "") {
+      hintEl.textContent = "";
+      hintEl.className = "hint";
+      return;
+    }
+
+    const isValid = validatorFn(value);
+    setHint(hintEl, messageFn(isValid), isValid);
+  });
+}
+
+function setHint(element, message, isValid) {
+  element.textContent = message;
+  element.className = isValid ? "hint valid" : "hint invalid";
+}
+
+//   Rules
+const isValidName = (val) => /^[a-zA-Z]{4,}$/.test(val);
+const isValidEmail = (val) =>
+  /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val) &&
+  (val.match(/@/g) || []).length === 1;
+const isValidWebsite = (val) => /\./.test(val);
+const isValidMessage = (val) => val.length >= 25;
+
+//   Validators
+attachValidator(nameInput, nameHint, isValidName, (ok) =>
+  ok ? "✓ Valid name." : "Name must be at least 4 letters (A-Z only)."
+);
+
+attachValidator(emailInput, mailHint, isValidEmail, (ok) =>
+  ok
+    ? "✓ Valid email address."
+    : "Email must contain one '@' and a valid domain."
+);
+
+attachValidator(websiteInput, siteHint, isValidWebsite, (ok) =>
+  ok ? "✓ Website format looks good." : "Website must include at least one dot."
+);
+
+attachValidator(messageInput, textHint, isValidMessage, (ok) =>
+  ok ? "✓ Message is long enough." : "Message must be at least 25 characters."
+);
+
+// Handler
+form.addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  const nameValid = isValidName(nameInput.value.trim());
+  const emailValid = isValidEmail(emailInput.value.trim());
+  const websiteValid = isValidWebsite(websiteInput.value.trim());
+  const messageValid = isValidMessage(messageInput.value.trim());
+
+  if (!nameValid || !emailValid || !websiteValid || !messageValid) {
+    showModal("error-modal");
+    return;
+  }
+
+  submitButton.disabled = true;
+
+  fetch("https://borjomi.loremipsum.ge/api/send-message", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      name: nameInput.value.trim(),
+      email: emailInput.value.trim(),
+      website: websiteInput.value.trim(),
+      message: messageInput.value.trim(),
+    }),
+  })
+    .then((res) => res.json())
+    .then((data) => {
+      if (data?.status === 1) {
+        showModal("success-modal");
+        form.reset();
+        document.querySelectorAll(".hint").forEach((hint) => {
+          hint.textContent = "";
+          hint.className = "hint";
+        });
+      } else {
+        showModal("error-modal");
+      }
+    })
+    .catch((err) => {
+      console.error("Failed to send:", err);
+      showModal("error-modal");
+    })
+    .finally(() => {
+      submitButton.disabled = false;
+    });
 });
