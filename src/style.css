@@ -921,65 +921,87 @@ header {
 }
 
 /* ========================================
-   Team Section
-======================================== */
-.team {
-  padding: 60px 40px;
-  text-align: center;
-  background: #fff;
-}
-
-.team h2 {
-  font-family: "Poppins", sans-serif;
-  font-size: 28px;
-  margin-bottom: 30px;
-}
-
-.team-logos span {
-  display: inline-block;
-  margin: 0 10px;
-  font-family: "Poppins", sans-serif;
-  font-size: 16px;
-}
-
-/* ========================================
    Contact-us Section
 ======================================== */
-.contact-us {
-  padding: 60px 40px;
-  background: #f4f4f4;
+.co.contact-form {
+  background-image: url("https://ssabanadze0.github.io/final_front/src/images/map.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 80px 20px;
+  color: white;
   text-align: center;
+  position: relative;
+  z-index: 1;
 }
 
-.contact-us h2 {
-  font-family: "Poppins", sans-serif;
-  font-size: 28px;
-  margin-bottom: 20px;
+.contact-form::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.6); /* dark overlay */
+  z-index: -1;
 }
 
-.contact-us form {
-  max-width: 600px;
+.contact-form h2 {
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+
+.contact-form h3 {
+  font-weight: 400;
+  font-size: 16px;
+  margin-bottom: 40px;
+  color: #ccc;
+}
+
+.contact-form form {
+  max-width: 1000px;
   margin: 0 auto;
 }
 
-.contact-us input,
-.contact-us textarea {
-  width: 100%;
-  padding: 12px;
-  margin-bottom: 12px;
-  border: 1px solid #ccc;
-  font-family: "Montserrat", sans-serif;
-  font-size: 14px;
+.form-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-bottom: 20px;
+  justify-content: space-between;
 }
 
-.contact-us button {
-  padding: 12px 20px;
-  background: #0081ff;
-  color: #fff;
+.form-group {
+  flex: 1 1 30%;
+  min-width: 200px;
+}
+
+.form-group textarea {
+  width: 100%;
+  height: 150px;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 14px;
+  font-size: 14px;
   border: none;
-  font-family: "Poppins", sans-serif;
-  font-size: 16px;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.submit-button {
+  padding: 14px 28px;
+  background-color: transparent;
+  color: #e93656;
+  border: 2px solid #e93656;
+  font-weight: bold;
+  text-transform: uppercase;
   cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.submit-button:hover {
+  background-color: #e93656;
+  color: white;
 }
 
 /* ========================================

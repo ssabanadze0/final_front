@@ -566,14 +566,56 @@
       </div>
     </section>
     <!-- Contact Form -->
-    <section class="contact-us">
-      <h2>Contact Us</h2>
-      <form>
-        <input type="text" placeholder="Your Name" />
-        <input type="email" placeholder="Email Address" />
-        <textarea placeholder="Message"></textarea>
-        <button type="submit">Send Message</button>
-      </form>
+    <section class="contact-form">
+      <div class="container">
+        <h2>Contact Us</h2>
+        <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h3>
+
+        <form id="contact-form" novalidate>
+          <div class="form-container">
+            <div class="form-group">
+              <input
+                type="text"
+                placeholder="Your Name*"
+                id="name"
+                name="name"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <input
+                type="email"
+                placeholder="Email Address*"
+                id="email"
+                name="email"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <input
+                type="text"
+                placeholder="Your Website*"
+                id="website"
+                name="website"
+                required
+              />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <textarea
+              placeholder="Message*"
+              id="message"
+              name="message"
+              required
+            ></textarea>
+          </div>
+
+          <button type="submit" id="submit-button" class="submit-button">
+            Send Message
+          </button>
+        </form>
+      </div>
     </section>
 
     <!-- Footer -->
