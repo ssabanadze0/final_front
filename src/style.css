@@ -473,7 +473,7 @@ header {
 }
 /* === Testimonials Section === */
 .t-slider {
-  background-image: url("/src/images/clip.jpg");
+  background-image: url("https://ssabanadze0.github.io/final_front/src/images/clip.jpg");
   background-size: cover;
   background-position: center;
   padding: 80px 20px;
