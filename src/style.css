@@ -923,7 +923,7 @@ header {
 /* ========================================
    Contact-us Section
 ======================================== */
-.co.contact-form {
+.contact-form {
   background-image: url("https://ssabanadze0.github.io/final_front/src/images/map.png");
   background-size: cover;
   background-position: center;
@@ -933,22 +933,25 @@ header {
   text-align: center;
   position: relative;
   z-index: 1;
+  font-family: "Poppins", sans-serif;
 }
 
 .contact-form::before {
   content: "";
   position: absolute;
   inset: 0;
-  background-color: rgba(0, 0, 0, 0.6); /* dark overlay */
+  background-color: rgba(0, 0, 0, 0.6);
   z-index: -1;
 }
 
 .contact-form h2 {
+  font-family: "Jaapokki-Regular", sans-serif;
   font-size: 40px;
   margin-bottom: 10px;
 }
 
 .contact-form h3 {
+  font-family: "Roboto-Light", sans-serif;
   font-weight: 400;
   font-size: 16px;
   margin-bottom: 40px;
@@ -986,10 +989,12 @@ header {
   border: none;
   border-radius: 4px;
   box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
 }
 
 .submit-button {
   padding: 14px 28px;
+  margin-top: 30px;
   background-color: transparent;
   color: #e93656;
   border: 2px solid #e93656;
@@ -997,6 +1002,7 @@ header {
   text-transform: uppercase;
   cursor: pointer;
   transition: background-color 0.3s;
+  font-family: "GlacialIndifference-Bold", sans-serif;
 }
 
 .submit-button:hover {
@@ -1008,14 +1014,59 @@ header {
    Footer Section
 ======================================== */
 footer {
-  background: #1e1e1e;
+  background: #171717;
   color: #ccc;
   text-align: center;
   padding: 40px 20px;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Mulish", sans-serif;
 }
 
-.footer-socials span {
-  margin: 0 10px;
+.footer-logo {
+  font-size: 36px;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 10px;
+}
+
+.footer-logo-dot {
+  color: #e93656;
+}
+
+.subtitle {
+  font-size: 14px;
   color: #ccc;
+  margin-top: 4px;
+  font-weight: 400;
+}
+
+.footer-description {
+  max-width: 700px;
+  margin: 0 auto 30px;
+  line-height: 1.6;
+  font-size: 15px;
+}
+
+.footer-socials {
+  margin-bottom: 30px;
+}
+
+.footer-socials a {
+  display: inline-block;
+  margin: 0 10px;
+  font-size: 18px;
+  color: #00f5ff;
+  transition: transform 0.3s;
+  text-decoration: none;
+}
+
+.footer-socials a:hover {
+  transform: scale(1.2);
+  color: #e93656;
+}
+
+.bottom-footer {
+  border-top: 1px solid #2a2a2a;
+  padding-top: 20px;
+  font-size: 14px;
+  color: #888;
 }
