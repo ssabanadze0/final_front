@@ -1221,6 +1221,7 @@ footer {
 
   .profile-skills-social {
     width: 100%;
+    align-items: center;
   }
 
   .profile-skills-social .social-icons {
