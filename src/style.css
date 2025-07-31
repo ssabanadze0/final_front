@@ -1430,7 +1430,10 @@ footer {
     padding: 0 20px;
     font-size: 36px;
   }
-
+  .contact-info-container {
+    flex-direction: column;
+    align-content: center;
+  }
   .contact-box:nth-of-type(3) .contact-text a {
     display: inline-block;
     word-break: break-all;
